@@ -1,6 +1,6 @@
 
 import {Router} from "express";
-import { appCancelControler,appDetalControler,appScheduleControler,appGetControler } from "../Controlers/AppointControllers";
+import { appCancelControler,appDetalControler,newAppControler,appGetControler } from "../Controlers/AppointControllers";
 
 
 const appointRout : Router = Router();
@@ -8,7 +8,7 @@ const appointRout : Router = Router();
 
 appointRout.get("/", appGetControler);
 appointRout.get("/:id", appDetalControler);
-appointRout.post("/schedule", appScheduleControler);
+appointRout.post("/App", newAppControler);
 appointRout.put("/cancel", appCancelControler);
 
 export  default appointRout;
