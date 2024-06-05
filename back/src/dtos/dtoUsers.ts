@@ -1,10 +1,12 @@
 
 
 export interface dtoUsers {
-    
-    name: string,
+    nombre:string,
+    apellido:string,
+    direccion: string,
+    telefono: number,
     email: string,
-    birthdate: Date,
-    nDni: number,
+    dni: number,
+    urlFoto: string,
 };
 

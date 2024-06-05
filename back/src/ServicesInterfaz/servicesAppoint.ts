@@ -1,4 +1,4 @@
-import { IAppointment } from "../Interfaces/IAppointments";
+/* import { IAppointment } from "../Interfaces/IAppointments";
 import { IAppointDTO } from "../dtos/dtoAppointments";
 import { idUser } from "./servicesUsers";
 import { IUsers } from "../Interfaces/IUser";
@@ -65,3 +65,5 @@ export const cancelAppo = async (id:number) : Promise<string>=>{
   }
 
 }
+
+*/

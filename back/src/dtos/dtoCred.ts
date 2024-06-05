@@ -1,6 +1,7 @@
 
 
 export interface dtoCredentials {
-    username: string,
-    password : string
+    nombreUsuario: string,
+    contraseña: string,
+    usuarioId: number
 }

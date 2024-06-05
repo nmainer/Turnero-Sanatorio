@@ -1,7 +1,5 @@
 import { Request, Response } from "express"
-import {getAppo,newAppo,getDetallAppo, cancelAppo} from "../Services/servicesAppoint"
-import { IAppointment, IHorario } from "../Interfaces/IAppointments";
-
+import {getAppo,newAppo,getDetallAppo, cancelAppo} from "../ServicesTypeORM/turnoORM"
 
 
 export const appGetControler = async (req : Request , res : Response)=>{
@@ -21,17 +19,15 @@ export const appDetalControler = async (req : Request , res : Response) =>{
 }
 
 
-export const newAppControler = async (req : Request , res : Response) =>{
+export const newAppControler = async (req:Request ,res:Response) =>{
 
 
-const {date,time,userId} : {date:string, time:IHorario ,userId:number} = req.body;
-const dtoApp = {
-  date,time,userId
-}
+const {dia,hora,usuario} : {dia:string,hora:string,usuario:number} = req.body;
+
   
-const nApp = await newAppo (dtoApp);
+const nApp = await newAppo ({dia,hora,usuario});
 
-res.status(200).json(nApp);
+res.status(200).send(nApp);
 
 }
 

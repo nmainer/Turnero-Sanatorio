@@ -1,9 +1,6 @@
-import {IHorario} from "../Interfaces/IAppointments"
-
-
 
 export interface IAppointDTO {
-    date: string,
-    time: IHorario,
-    userId: number
+    dia:string,
+    hora:string,
+    usuario: number
     };

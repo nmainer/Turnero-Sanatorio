@@ -1,4 +1,4 @@
-import { ICredentials } from "../Interfaces/ICredentials";
+/*import { ICredentials } from "../Interfaces/ICredentials";
 import { dtoCredentials } from "../dtos/dtoCred";
 
 const valorCred : ICredentials[] = [];
@@ -36,3 +36,5 @@ const verifCredentials = async (username : string , password : string) : Promise
     return `usuario no encontrado`;
 
 }
+
+*/

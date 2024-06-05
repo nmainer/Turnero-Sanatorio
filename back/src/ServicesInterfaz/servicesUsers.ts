@@ -1,4 +1,4 @@
-import { IUsers } from "../Interfaces/IUser"
+/* import { IUsers } from "../Interfaces/IUser"
 import { dtoUsers } from "../dtos/dtoUsers";
 import { credentialsUser } from "./credentialService";
 
@@ -43,3 +43,4 @@ const newUser : IUsers  = {
     return `Usuario registrado`;
 };
 
+*/
