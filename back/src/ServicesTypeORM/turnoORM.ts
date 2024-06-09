@@ -23,7 +23,7 @@ export const getAppo = async (): Promise <Turno[] | string>=>{
 
 export const getDetallAppo = async (id:number) : Promise <Turno|string>=>{
 
-    const turno : Turno|null = await turnoModelo.findOneBy({id:id});
+const turno : Turno|null = await turnoModelo.findOneBy({id:id});
 
 if (!turno){
   
@@ -36,27 +36,24 @@ return turno;
 
 
 export const newAppo = async (turno:IAppointDTO) : Promise<string>=>{
-
-
- const user : Usuario| null = await usuarioModelo.findOneBy({id:turno.usuario});
-
- if(user){
-  const app : Turno = await turnoModelo.create({
-    dia: turno.dia,
-    hora:turno.hora,
-    usuario:user
-  });
-  await turnoModelo.save(app);
-
-  return `turno vinculado a : ${user.nombre}`;
   
- }
-return `no se ha encontrado a paciente ingresado`;
-   
-}
+ 
+  const app : Turno = await turnoModelo.create(turno);
+
+  const user : Usuario | null= await usuarioModelo.findOneBy({id:turno.usuarioId});
+
+  if(user){
+    await turnoModelo.save(app);
+  
+    return `turno creado`;
+  } else {
+    return `usuario inexistente`
+  }
 
 
-
+  }
+    
+  
 export const cancelAppo = async (id:number) : Promise<string>=>{
     
   const App : Turno | null = await turnoModelo.findOneBy({id:id})

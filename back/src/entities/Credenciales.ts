@@ -1,6 +1,6 @@
-import { Column, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
-
+import { Usuario } from "./Usuarios";
 
 @Entity({name :"credenciales"})
 
@@ -10,11 +10,15 @@ export class Credencial {
     id:number
 
     @Column({length:20})
-    nombreUsuario:string
+    nameUser:string
 
     @Column({length:20})
-    contraseña:string
+    password:string
 
-    @Column("integer")
-    usuarioId: number
+    @OneToOne(()=>Usuario , (usuario)=>usuario.credencial)
+    user:Usuario
+
 };
+
+
+    

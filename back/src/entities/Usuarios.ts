@@ -29,10 +29,11 @@ export class Usuario {
     @Column()
     urlFoto: string
 
-    @OneToMany(()=> Turno , (turno)=>turno.usuario)
-    turnos: Turno[]
-
     @OneToOne(()=> Credencial)
     @JoinColumn()
     credencial: Credencial
+
+    @OneToMany(()=> Turno , (turno)=>turno.usuario)
+    turnos: Turno[]
+  
 };

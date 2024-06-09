@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity,  ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Usuario } from "./Usuarios";
 
 
@@ -19,6 +19,9 @@ export class Turno {
     @Column({length:20 , default: "pendiente"})
     estado:string
 
+    @Column()
+    usuarioId:number
+
     @ManyToOne(()=> Usuario , (usuario)=>usuario.turnos)
-    usuario:Usuario
+    usuario: Usuario
 }

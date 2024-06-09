@@ -9,6 +9,6 @@ const appointRout : Router = Router();
 appointRout.get("/", appGetControler);
 appointRout.get("/:id", appDetalControler);
 appointRout.post("/App", newAppControler);
-appointRout.put("/cancel", appCancelControler);
+appointRout.put("/cancel/:id", appCancelControler);
 
 export  default appointRout;

@@ -1,6 +1,9 @@
+import { Usuario } from "../entities/Usuarios";
 
 
-export interface dtoUsers {
+
+export interface createUserDto {
+    
     nombre:string,
     apellido:string,
     direccion: string,
@@ -8,5 +11,10 @@ export interface dtoUsers {
     email: string,
     dni: number,
     urlFoto: string,
-};
+    
+}
 
+export interface UserDTO{
+    status: boolean,
+    user:Usuario
+}

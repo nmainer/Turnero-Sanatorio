@@ -3,40 +3,45 @@ import {getAppo,newAppo,getDetallAppo, cancelAppo} from "../ServicesTypeORM/turn
 
 
 export const appGetControler = async (req : Request , res : Response)=>{
-
-const getAp  = await getAppo();
-
+try{
+  const getAp  = await getAppo();
   res.status(200).json(getAp);
+}catch(error){
+  res.status(404).send(`ERROR usuario: ${error}`)
+}
 };
 
 
 export const appDetalControler = async (req : Request , res : Response) =>{
-
-    const id : number = parseInt(req.params.id);
-    const valorAppUs = await getDetallAppo(id);
-
-    res.status(200).json(valorAppUs);
+try{
+  const id : number = parseInt(req.params.id);
+  const valorAppUs = await getDetallAppo(id);
+  res.status(200).json(valorAppUs);
+}catch(error){
+  res.status(404).send(`ERROR: ${error}`)
+}
+    
 }
 
 
 export const newAppControler = async (req:Request ,res:Response) =>{
-
-
-const {dia,hora,usuario} : {dia:string,hora:string,usuario:number} = req.body;
-
-  
-const nApp = await newAppo ({dia,hora,usuario});
-
-res.status(200).send(nApp);
-
+try{
+  const {dia,hora,usuarioId} = req.body;
+  const nApp = await newAppo ({dia,hora,usuarioId});
+  res.status(201).send(nApp);
+}catch(error){
+  res.status(400).send(`datos incorrectos, ERROR: ${error}`)
+}
 }
 
 
 export const appCancelControler = async (req : Request , res : Response) =>{
+try{
+  const {id} = req.params;
+  const canApp = await cancelAppo(parseInt(id));
+  res.status(200).json(canApp);
 
-    const {id} = req.body;
-    const canApp = await cancelAppo(id);
-
-    res.status(200).json(canApp);
-
+}catch (error){
+res.status(404).send(`ERROR: ${error}`)
+}
 }
