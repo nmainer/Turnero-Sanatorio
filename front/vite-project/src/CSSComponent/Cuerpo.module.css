@@ -1,0 +1,30 @@
+
+.imagenLogo{
+   width: 30rem;
+   height: auto;
+}
+
+.centro{
+    
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100vw;
+    height: auto;
+    margin-bottom: 8rem;
+    margin-top: 6rem;
+    
+     
+}
+.cuadroHorarios{
+    background-color:rgb(66, 66, 172);
+    height:6rem;
+    padding: 5rem 3rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 2px 2px 8px black;
+    width: 20rem;
+}
