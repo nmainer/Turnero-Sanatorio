@@ -1,11 +1,16 @@
 import './App.css'
-import Home from './Views/Home'
+import NavBar from './Components/NavBar.jsx'
+import Home from "./Views/Home/Home.jsx"
+import MisTurnos from "./Views/Turnos/Misturnos.jsx"
+
+
 
 function App() {
 
   return (
     <div>
-      <Home/>
+      {/*<Home/>*/}
+     <MisTurnos/>
     </div>
   )
 }

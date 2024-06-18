@@ -17,6 +17,7 @@
      
 }
 .cuadroHorarios{
+    text-shadow: 2px 2px 8px black;
     background-color:rgb(66, 66, 172);
     height:6rem;
     padding: 5rem 3rem;
