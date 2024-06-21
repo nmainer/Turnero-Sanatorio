@@ -1,11 +1,17 @@
-import Misturnos from "../../Helpers/Misturnos.js";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Turno from "../../Components/Turno.jsx";
 import styles from "../../CSSComponent/Turno.module.css"
 
 const MisTurnos = ()=>{
 
-const [turnos, useTurnos] = useState(Misturnos);
+const [turnos, useTurnos] = useState([]);
+
+useEffect(()=>{
+axios.get("http://localhost:3000/appointments")
+.then((response)=> useTurnos(response.data))
+.catch((error)=> `ERROR : ${error}`)
+}, [])
 
 
 return (
@@ -17,7 +23,7 @@ return (
      {
         turnos.map((turno)=>{
             return (
-                <Turno key={turno.id} id={turno.id} dia={turno.dia} hora= {turno.hora} estado={turno.estado}/>
+                <Turno key={turno.id}  dia={turno.dia} hora= {turno.hora} doctor={turno.doctor} estado={turno.estado}/>
             )
         })
   
