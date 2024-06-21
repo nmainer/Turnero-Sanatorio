@@ -16,6 +16,9 @@ export class Turno {
     @Column()
     hora:string
 
+    @Column()
+    doctor:string
+
     @Column({length:20 , default: "pendiente"})
     estado:string
 

@@ -26,8 +26,8 @@ try{
 
 export const newAppControler = async (req:Request ,res:Response) =>{
 try{
-  const {dia,hora,usuarioId} = req.body;
-  const nApp = await newAppo ({dia,hora,usuarioId});
+  const {dia,hora,doctor,usuarioId} = req.body;
+  const nApp = await newAppo ({dia,hora,doctor,usuarioId});
   res.status(201).send(nApp);
 }catch(error){
   res.status(400).send(`datos incorrectos, ERROR: ${error}`)
