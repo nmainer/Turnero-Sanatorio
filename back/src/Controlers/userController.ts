@@ -62,10 +62,21 @@ const {nameUser,password} = req.body;
 
 const Loginuser = await verifCredentials (nameUser,password);
 
-res.status(200).send(Loginuser);
+if ( typeof Loginuser === 'object' && Loginuser !== null && 'status' in Loginuser) {
 
-}catch(error){
+  if (Loginuser.status === true){
+    res.status(200).send("Login exitoso! Bienvenido!");
+  }
+} else  if (typeof Loginuser === 'object' && Loginuser !== null && 'error' in Loginuser && "mensaje" in Loginuser){
+
+    if(Loginuser.error){
+      res.status(401).send(Loginuser.mensaje);
+    } 
+}
+}
+catch(error){
   res.status(400).send(`ERROR: ${error}`)
 }
-}
 
+
+}
