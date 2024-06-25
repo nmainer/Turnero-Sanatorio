@@ -8,7 +8,7 @@ const MisTurnos = ()=>{
 const [turnos, useTurnos] = useState([]);
 
 useEffect(()=>{
-axios.get("http://localhost:3000/appointments")
+ axios.get("http://localhost:3000/appointments")
 .then((response)=> useTurnos(response.data))
 .catch((error)=> `ERROR : ${error}`)
 }, [])

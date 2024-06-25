@@ -1,0 +1,86 @@
+
+
+
+.formulario{
+    background-color: beige; 
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 2px 2px 8px black;
+
+}
+
+.seccion1{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1rem;
+    border: 2px blue solid;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 2px 2px 8px blue;
+}
+
+.seccion2{
+    display: grid;
+    justify-content: center;
+    border-radius: 1rem;
+    border: 2px blue solid;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 2px 2px 8px blue; 
+}
+
+.linea{
+    margin: 10rem;
+   display: contents;
+}
+.subseccion1,
+.subseccion2{
+    display: grid;
+}
+
+input{
+    grid-column: 2;
+    width: 20rem;
+    height: 2rem;
+    margin-left: 3rem;
+    box-shadow: 2px 2px 8px black;
+    margin-bottom: 2rem;
+}
+
+label{
+grid-column: 1;
+margin-bottom: 2rem;
+}
+
+.boton{
+    height: 3rem;
+    width: 15rem ;
+    border: 1rem;
+    font-size: 1rem;
+    border: solid 2px black;
+    box-shadow: 2px 2px 8px black;
+    margin-bottom: 2rem;
+}
+
+.imagenLogo{
+    width: 7rem;
+    height: auto;
+}
+
+.loginFoto{
+    display: flex;
+    font-size: 3rem;
+    align-items: center;
+    width: 30vw;
+    justify-content: space-around;
+    margin: auto;
+    padding: 2rem;
+}
+.zocalo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
