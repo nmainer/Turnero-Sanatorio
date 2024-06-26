@@ -14,7 +14,7 @@ try {
 
   await registerUser ({nombre,apellido,direccion,telefono,email,dni,urlFoto},{nameUser,password});
   
-  res.status(201).send(`usuario registrado con exito`);
+  res.status(200).send(`usuario registrado con exito`);
 }catch(error){
   res.status(400).send(`error al crear usuario: ${error}`)
 }
