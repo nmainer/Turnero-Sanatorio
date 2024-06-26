@@ -1,20 +1,28 @@
-import Register from "../../Components/Register"
+
 import { useState } from "react"
+import ValidarRegister from "../../Helpers/ValidarRegister"
+import Register from "../../Components/Register"
+import axios from "axios"
+
 
 const RegisterUser = ()=>{
 
 const [registerUser,setRegisterUser] = useState({
-    nombre:"",
-    apellido:"",
-    direccion:"",
-    telefono:"",
-    email:"",
-    dni:"",
-    UrlFoto: "",
-    nombreUsuario:"",
-    nombreContraseña:"",
-    repetirContraseña:""
+
+     nombre:"",
+     apellido:"",
+     direccion:"",
+     telefono:"",
+     email: "",
+     dni: "",
+     urlFoto:"",
+     nameUser: "",
+     password:"",
+     password2:""
 })
+
+const [error, setError]= useState({});
+
 
 const handleChange = (event)=>{
 const {name,value} = event.target;
@@ -22,21 +30,45 @@ setRegisterUser({
     ...registerUser,
     [name]:value
 })
-}
-
-const handleSubmit = (event)=>{
-    event.preventDefault();
-alert (`nombre: ${registerUser.nombre} apellido: ${registerUser.apellido} direccion: ${registerUser.direccion}
-    telefono: ${registerUser.telefono} email: ${registerUser.email} DNI: ${registerUser.dni}
-    Urlfoto: ${registerUser.UrlFoto} nombreUsuario: ${registerUser.nombreUsuario} nombreContraseña: ${registerUser.nombreContraseña} 
-    repetirContraseña: ${registerUser.repetirContraseña}`)
-
+const data = ValidarRegister({
+    ...registerUser,
+    [name]:value
+})
+setError(data)
 }
 
 
- return(
+const handleSubmit = async (event)=>{
+ event.preventDefault();
+for (let elemento in registerUser){
+    if(registerUser[elemento] ===""){
+        alert ("Debes completar todos los campos");
+        return;
+    }
+}
+console.log(registerUser)
+
+await axios.post("http://localhost:3000/users/register" , registerUser) 
+.then((response)=>{
+    if(response.status === 200){
+        alert ("Registro exitoso, dirijase a Login");
+    }
+})
+.catch((error)=> {
+    if(error.response){
+       alert (` ${error.response.data}`)
+    } else {
+       alert (`Error inesperado: ${error.message}`)
+    }
+  })
+
+
+}
+
+
+return(
 <div>
-    <Register registerUser={registerUser} handleChange={handleChange} handleSubmit={handleSubmit}/>
+    <Register registerUser={registerUser}  handleChange={handleChange} handleSubmit={handleSubmit} error={error}/>
 </div>
     )
 }

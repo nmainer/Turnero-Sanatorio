@@ -47,7 +47,6 @@ return;
     .catch((error)=> {
       if(error.response){
          alert (` ${error.response.data}`)
-         console.log(error.response)
       } else {
          alert (`Error inesperado: ${error.message}`)
       }

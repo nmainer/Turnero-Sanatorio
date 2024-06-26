@@ -1,12 +1,21 @@
-
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
 
 
 .formulario{
     background-color: beige; 
-    width: 90%;
-    height: 90%;
-    margin: auto;
-    font-size: 1.5rem;
+    padding: 3rem;
+    width: fit-content;
+    height: fit-content;
+    font-size: 1rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-shadow: 2px 2px 8px black;
 
@@ -14,12 +23,11 @@
 
 .seccion1{
     display: flex;
-    justify-content: space-around;
     border-radius: 1rem;
     border: 2px blue solid;
-    padding: 2rem;
-    margin: 2rem;
     box-shadow: 2px 2px 8px blue;
+    padding: 2rem;
+    margin: 0%;
 }
 
 .seccion2{
@@ -27,13 +35,12 @@
     justify-content: center;
     border-radius: 1rem;
     border: 2px blue solid;
-    padding: 2rem;
-    margin: 2rem;
     box-shadow: 2px 2px 8px blue; 
+    padding: 2rem;
+    margin: 0%;
 }
 
 .linea{
-    margin: 10rem;
    display: contents;
 }
 .subseccion1,
@@ -43,44 +50,43 @@
 
 input{
     grid-column: 2;
+    margin: 0%;
     width: 20rem;
-    height: 2rem;
-    margin-left: 3rem;
+    height: 1.5rem;
     box-shadow: 2px 2px 8px black;
-    margin-bottom: 2rem;
 }
 
 label{
 grid-column: 1;
-margin-bottom: 2rem;
+margin: 1rem;
+
 }
 
 .boton{
     height: 3rem;
-    width: 15rem ;
+    width: 5rem ;
     border: 1rem;
     font-size: 1rem;
     border: solid 2px black;
     box-shadow: 2px 2px 8px black;
-    margin-bottom: 2rem;
 }
 
 .imagenLogo{
-    width: 7rem;
+    width: 6rem;
     height: auto;
 }
 
 .loginFoto{
     display: flex;
-    font-size: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2rem;
     align-items: center;
-    width: 30vw;
-    justify-content: space-around;
-    margin: auto;
-    padding: 2rem;
+    margin-bottom: 1rem;
+   
 }
 .zocalo{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
+ text-align: center;
+ margin-top: 2rem;
+   
 }

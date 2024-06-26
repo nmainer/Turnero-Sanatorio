@@ -6,10 +6,11 @@ const Login = (prop)=>{
 const {dataUser,handleChange,handleSubmit,dataError} = prop;
 
     return (
-
         <div className={styles.contenedor}>
+        
         <form onSubmit={handleSubmit} action="" className={styles.formulario}>
-        <div>
+          <div className={styles.contenedor2}>
+        <div className={styles.imagenylogo}>
         <img src={imagenSanatorio} alt="logoSanatorio" className={styles.imagenLogo} />
         <h1>LOGIN</h1>
         </div>
@@ -33,12 +34,9 @@ const {dataUser,handleChange,handleSubmit,dataError} = prop;
         <div style={{marginTop:"2rem"}}>
           <button type='submit' className={styles.boton}>Enviar</button>
         </div>
-
-        </form>
-
         </div>
-       
-       
+        </form>
+        </div>
       )
 }
 
