@@ -1,5 +1,5 @@
 import styles from "../CSSComponent/Form.module.css";
-import imagenSanatorio from "../imagenes/logoSanatorioSinfondo.png"
+import imagenSanatorio from "../imagenes/sanatorios/logoSanatorioSinfondo.png"
 
 
 const Login = (prop)=>{

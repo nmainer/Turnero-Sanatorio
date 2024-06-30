@@ -1,5 +1,5 @@
 import styles from "../CSSComponent/Register.module.css";
-import imagenSanatorio from "../imagenes/logoSanatorioSinfondo.png"
+import imagenSanatorio from "../imagenes/sanatorios/logoSanatorioSinfondo.png"
 
 
 const Register = (prop)=>{
@@ -7,7 +7,7 @@ const {registerUser ,handleChange , handleSubmit , error}=prop;
 
     return(
 
-      <div className={styles.fondo}>
+      <div className={styles.contenedor}>
 
         <form onSubmit={handleSubmit} action="" className={styles.formulario}>
         <div className={styles.loginFoto}>

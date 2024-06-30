@@ -1,8 +1,8 @@
 import styles from "../CSSComponent/Zocalo.module.css"
-import img1 from "../imagenes/sanatorio1.jpg"
-import img2 from "../imagenes/sanatorio2.jpg"
-import img3 from "../imagenes/sanatorio3.jpg"
-import img4 from "../imagenes/sanatorio5.jpg"
+import img1 from "../imagenes/sanatorios/sanatorio1.jpg"
+import img2 from "../imagenes/sanatorios/sanatorio2.jpg"
+import img3 from "../imagenes/sanatorios/sanatorio3.jpg"
+import img4 from "../imagenes/sanatorios/sanatorio5.jpg"
 
 
 const ZocaloSucursales = ()=>{

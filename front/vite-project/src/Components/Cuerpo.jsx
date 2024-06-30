@@ -1,4 +1,4 @@
-import imagenLogo from "../imagenes/logoSanatorioSinfondo.png"
+import imagenLogo from "../imagenes/sanatorios/logoSanatorioSinfondo.png"
 import styles from "../CSSComponent/Cuerpo.module.css";
 
 

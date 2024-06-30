@@ -1,4 +1,4 @@
-/* Reset CSS básico */
+/* 
 html,
 body,
 div,
@@ -86,23 +86,21 @@ video {
   border: 0;
   font: inherit;
   vertical-align: baseline;
-}
-
+}*/
 
 body{
-
-  background-color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: bold;
-  width: 100vw;
-  height: 100vh;
-  
+  background-color: beige;
+ 
+  padding: 0%;
+  margin: 0%;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 
 .fondo::before {
   position:absolute;
   content: "";
-  background-image: url("../imagenes/fondoDoctor.jpeg");
+  background-image: url("../imagenes/sanatorios/fondoDoctor.jpeg");
   background-size: cover;
   width: 100vw;
   height: 100vh;
