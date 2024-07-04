@@ -65,7 +65,7 @@ const Loginuser = await verifCredentials (nameUser,password);
 if ( typeof Loginuser === 'object' && Loginuser !== null && 'status' in Loginuser) {
 
   if (Loginuser.status === true){
-    res.status(200).send("Login exitoso! Bienvenido!");
+    res.status(200).send(Loginuser);
   }
 } else  if (typeof Loginuser === 'object' && Loginuser !== null && 'error' in Loginuser && "mensaje" in Loginuser){
 

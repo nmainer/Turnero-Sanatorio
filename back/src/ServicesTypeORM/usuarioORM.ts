@@ -58,15 +58,17 @@ export const registerUser = async (user:createUserDto , cred: createCreddto)  =>
   export const verifCredentials = async (nameUser: string ,password: string) : Promise <UserDTO|object>=>{
 
     const user : Credencial | null = await credencialModelo.findOne({where : {nameUser:nameUser} , relations : ["user"]});
-    
+     
     if(user){
         if(user.password === password){
          return {
           status: true,
-          user: user.user
+          user: user.user.id
          }
-        }    
+        }  
+         
     } 
+    
       return { error: true , mensaje: "Usuario y/o contraseña incorrecta/s"};
   
   }
