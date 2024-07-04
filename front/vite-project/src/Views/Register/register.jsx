@@ -3,7 +3,7 @@ import { useState } from "react"
 import ValidarRegister from "../../Helpers/ValidarRegister"
 import Register from "../../Components/Register"
 import axios from "axios"
-
+import Miperfil from "../Perfil/Miperfil"
 
 const RegisterUser = ()=>{
 
@@ -46,12 +46,25 @@ for (let elemento in registerUser){
         return;
     }
 }
-console.log(registerUser)
+
 
 await axios.post("http://localhost:3000/users/register" , registerUser) 
 .then((response)=>{
     if(response.status === 200){
         alert ("Registro exitoso, dirijase a Login");
+        setRegisterUser({
+            nombre:"",
+            apellido:"",
+            direccion:"",
+            telefono:"",
+            email: "",
+            dni: "",
+            urlFoto:"",
+            nameUser: "",
+            password:"",
+            password2:""
+       })
+
     }
 })
 .catch((error)=> {
@@ -69,6 +82,7 @@ await axios.post("http://localhost:3000/users/register" , registerUser)
 return(
 <div>
     <Register registerUser={registerUser}  handleChange={handleChange} handleSubmit={handleSubmit} error={error}/>
+  
 </div>
     )
 }

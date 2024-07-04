@@ -3,9 +3,11 @@ import { useState } from "react";
 import ValidarRegister from "../../Helpers/ValidarLogin";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import { loginUser } from "../../Redux/Reducer";
 
 
-const LoginUser = ({Logeo})=>{
+const LoginUser = ()=>{
 
 
  const [dataUser,setDataUser] = useState ({
@@ -31,6 +33,8 @@ setError(data);
 }
 
 const navigate = useNavigate();
+const dispatch = useDispatch();
+
 
 const handleSubmit = async (event)=>{
 event.preventDefault();
@@ -44,16 +48,19 @@ return;
 
 try{
   const response = await axios.post("http://localhost:3000/users/login", dataUser );
-  
+  const idUser = response.data.user
      if (response.status === 200){
         alert ("Login exitoso! Bienvenido !")
-        Logeo();
-        navigate("/homeuser");
-        return ()=>{
-          dataUser === "";
-        }
+        dispatch(loginUser({...dataUser, id:idUser}))
+        navigate("/bienvenido")
+
+        setDataUser({
+         nameUser: "",
+         password: ""
+       });
+      
      }
-     console.log(dataUser);
+     
    } catch (error) {
       if(error.response){
          alert (` ${error.response.data}`)
@@ -62,10 +69,10 @@ try{
       }
     }
 
-    
-
 }
-              
+
+
+           
 return (
    <div>
     <Login dataUser={dataUser} handleChange={handleChange} handleSubmit={handleSubmit}  dataError={dataError}/>

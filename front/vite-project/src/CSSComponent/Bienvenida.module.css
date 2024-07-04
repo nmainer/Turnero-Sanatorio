@@ -1,0 +1,15 @@
+
+
+.contenedor {
+    background-color: beige;
+    box-shadow: 2px 2px 8px black;
+    width: fit-content;
+    height: fit-content;
+    padding: 2rem;
+}
+
+.cuerpo{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
