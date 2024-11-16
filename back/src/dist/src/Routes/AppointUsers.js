@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const AppointControllers_1 = require("../Controlers/AppointControllers");
+const appointRout = (0, express_1.Router)();
+appointRout.get("/", AppointControllers_1.appGetControler);
+appointRout.get("/:id", AppointControllers_1.appDetalControler);
+appointRout.post("/App", AppointControllers_1.newAppControler);
+appointRout.put("/cancel/:id", AppointControllers_1.appCancelControler);
+exports.default = appointRout;
