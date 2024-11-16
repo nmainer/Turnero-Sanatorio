@@ -1,7 +1,7 @@
-import app from '../src/server';  // Asegúrate de que app está exportado desde server.ts
+import app from "../src/server"; // Asegúrate de que app esté exportado desde server.ts
 import "reflect-metadata";  // Necesario para TypeORM
 import { AppDataSource } from "../src/Config/data-source";
-import { VercelRequest, VercelResponse } from '@vercel/node';  // Importa las interfaces de Vercel
+import { VercelRequest, VercelResponse } from '@vercel/node'; // Importa las interfaces de Vercel
 
 // Cargar las variables de entorno
 import dotenv from 'dotenv';
@@ -26,3 +26,4 @@ export default (req: VercelRequest, res: VercelResponse) => {
   }
   app(req, res);  // Pasar la petición y respuesta a tu app de Express
 };
+
