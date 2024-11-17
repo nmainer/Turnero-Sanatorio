@@ -6,7 +6,12 @@
       "use": "@vercel/static-build"
     }
   ],
- "outputDirectory": "vite-project/dist"
+ "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/vite-project/dist/index.html" 
+    }
+  ]
 }
 
 
