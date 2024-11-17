@@ -12,7 +12,7 @@ const handleState = async ()=>{
 
     try{
       dispatch(cancelTurno(id))
-      await axios.put(`http://localhost:3000/appointments/cancel/${id}` , { estado: "cancelado" })
+      await axios.put(`${import.meta.env.VITE_API_URL}/appointments/cancel/${id}` , { estado: "cancelado" })
       alert ("Turno cancelado con exito")
     } catch (error){
       alert (`Error al cancelar turno: ${error}`)

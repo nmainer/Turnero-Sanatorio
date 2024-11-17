@@ -18,7 +18,7 @@ useEffect(()=>{
 const elemento = async ()=>{
 try{
 
-    const response = await axios.get("http://localhost:3000/appointments")
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/appointments`)
 
     const allAppoint = response.data;
     

@@ -48,7 +48,7 @@ for (let elemento in registerUser){
 }
 
 
-await axios.post("http://localhost:3000/users/register" , registerUser) 
+await axios.post(`${import.meta.env.VITE_API_URL}/users/register`, registerUser) 
 .then((response)=>{
     if(response.status === 200){
         alert ("Registro exitoso, dirijase a Login");

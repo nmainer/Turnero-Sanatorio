@@ -47,7 +47,7 @@ return;
 } 
 
 try{
-  const response = await axios.post("http://localhost:3000/users/login", dataUser );
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, dataUser );
   const idUser = response.data.user
      if (response.status === 200){
         alert ("Login exitoso! Bienvenido !")
