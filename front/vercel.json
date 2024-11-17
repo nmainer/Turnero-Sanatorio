@@ -2,20 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "vite-project/package.json",
+      "src": "vite-project/**",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "vite-project/dist"
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/vite-project/dist/$1"
-    }
-  ],
-  "buildCommand": "npm run build"
+  ]
 }
+
 
   
