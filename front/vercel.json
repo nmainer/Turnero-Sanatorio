@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "vite-project/dist/**/*",
+      "src": "vite-project/dist/index.html",
       "use": "@vercel/static-build"
     }
   ],
