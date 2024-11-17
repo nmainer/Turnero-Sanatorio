@@ -5,7 +5,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
-app.get('/api', (req, res) => {
+
+app.get('/', (req, res) => {
   res.json({ message: 'API funcionando!' });
 });
 

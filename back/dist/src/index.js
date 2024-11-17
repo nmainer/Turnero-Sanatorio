@@ -8,7 +8,7 @@ const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 app.use((0, cors_1.default)());
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.json({ message: 'API funcionando!' });
 });
 app.listen(port, () => {
