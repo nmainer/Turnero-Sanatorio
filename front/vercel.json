@@ -14,7 +14,8 @@
       "src": "/(.*)",
       "dest": "/vite-project/dist/$1"
     }
-  ]
+  ],
+  "buildCommand": "npm run build"
 }
 
   
