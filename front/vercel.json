@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "vite-project/dist/**/*",
-      "use": "@vercel/node"
+      "use": "@vercel/static-build"
     }
   ],
  "outputDirectory": "vite-project/dist"
